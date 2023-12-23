@@ -1,18 +1,36 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    Home
+    <p ref="paragraph">
+      Name: {{ name }}
+      Age: {{ age }}
+    </p>
+    <button @click="handleClick">Click me!</button>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { ref, } from 'vue';
 
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
-  }
+  setup() {
+    const paragraph = ref(null);
+
+    let name = 'mario';
+    let age = 30;
+
+    const handleClick = () => {
+      console.log('Paragraph:', paragraph);
+    }
+
+    return {
+      name,
+      age,
+      handleClick,
+      paragraph
+    };
+  },
 }
 </script>
