@@ -22,7 +22,9 @@ export default {
     let age = 30;
 
     const handleClick = () => {
-      console.log('Paragraph:', paragraph);
+      console.log('Paragraph:', paragraph, paragraph.value);
+      paragraph.value.classList.add('test');
+      paragraph.value.textContent = 'hello, ninja';
     }
 
     return {
