@@ -16,22 +16,19 @@ import { ref, } from 'vue';
 export default {
   name: 'HomeView',
   setup() {
-    const paragraph = ref(null);
+    // const paragraph = ref(null);
 
-    let name = 'mario';
-    let age = 30;
+    const name = ref('mario');
+    const age = ref(30);
 
     const handleClick = () => {
-      console.log('Paragraph:', paragraph, paragraph.value);
-      paragraph.value.classList.add('test');
-      paragraph.value.textContent = 'hello, ninja';
+      name.value = 'luigi';
     }
 
     return {
       name,
       age,
       handleClick,
-      paragraph
     };
   },
 }
