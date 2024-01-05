@@ -79,11 +79,11 @@ header {
 
 .footer {
     grid-area: footer;
-    padding: 10px;
     color: lightgray;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 64px;
 }
 
 .footer, .maincontent {
