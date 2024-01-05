@@ -1,6 +1,6 @@
 <template>
     <div>
-        History
+        Contact Contact
         
     </div>
 </template>

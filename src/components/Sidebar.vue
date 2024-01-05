@@ -44,7 +44,7 @@
                    <el-menu-item-group>
                     <template v-if="thirdItem.heading">
                       <el-menu-item :index="`${i}-${j}-${k}`">
-                        <NuxtLink to="/products" @click="handleMenuClick">{{ thirdItem.heading }}</NuxtLink>
+                        <router-link to="/contact" @click="handleMenuClick">{{ thirdItem.heading }}</router-link>
                       </el-menu-item>
                     </template>
                   </el-menu-item-group>
