@@ -3,7 +3,7 @@
     <header class=".htmlheader">
       <div class="full-width hamburger">
           <div id="icon_hamburger">
-            
+            <el-icon @click="openModal"><more /></el-icon>
           </div> 
       </div>
       <div class="full-width">  
@@ -12,13 +12,14 @@
     </header>
     <aside class="side"><Sidebar/></aside>
     <div class="maincontent">
-        <div class="border-rounded">
+            <div class="border-rounded">
+                <router-view></router-view>
+            </div>
         </div>
-    </div>
     <div class="footer"><FooterComponent/></div>
     <div class="modal-overlay" v-show="modalStore.isOpen">
         <div class="modal">
-            
+          <el-icon class="icon-close" @click="modalStore.close()"><close /></el-icon>
             <Sidebar/>
         </div>
     </div>
