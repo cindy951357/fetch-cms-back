@@ -97,6 +97,49 @@ header {
         display: none;
     }
   }
+
+  .dashboard-container {
+        display: grid;
+        grid-template-rows: 52px 8fr 52px;
+        grid-template-areas:
+            "header"
+            "maincontent"    
+            "footer";   
+    }
+    .htmlheader {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .full-width {
+        position: absolute;        
+        display: flex;
+
+        .header {
+            justify-self: center;
+            justify-content: center;
+            z-index: 0;
+            position: relative;
+
+            .icon-group {
+                position: absolute;
+                top: 10px;
+                right: 5px;
+            }
+        }
+    }
+
+    #icon_hamburger {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 10px;
+        top: 10px;
+        color: white;
+        z-index: 2;
+    }
 }
 
 .border-rounded {

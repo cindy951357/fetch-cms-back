@@ -20,7 +20,7 @@
     >
         <el-menu-item index="0" @click="handleMenuClick">
             <el-icon><house /></el-icon>
-            <template #title><NuxtLink to="/">Home</NuxtLink></template>
+            <template #title><router-link to="/">Home</router-link></template>
         </el-menu-item>
         <template v-for="(item, i) in MainMenuConfig" :key="i">
           <div v-if="item.heading" class="first-item">
@@ -61,14 +61,17 @@
 import {  ref } from 'vue';
   import MainMenuConfig from "@/data/MenuData";
   import {
-    Document,
     Menu as IconMenu,
-    Location,
-    Setting,
     House,
     Right,
     Back
   } from '@element-plus/icons-vue';
+  import { 
+    ElIcon,  
+    ElSubMenu, 
+    ElMenu, 
+    ElMenuItem, 
+    ElMenuItemGroup } from 'element-plus';
   import { useModalStore } from '@/stores/modal';
   import { useSidebarStore } from '@/stores/sidebar';
 
