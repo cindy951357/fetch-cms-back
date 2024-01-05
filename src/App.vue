@@ -205,4 +205,8 @@ header {
     overflow-y: auto;
   }
 }
+
+a {
+  text-decoration: none;
+}
 </style>

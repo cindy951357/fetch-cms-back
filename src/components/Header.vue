@@ -5,32 +5,30 @@
                 <el-text class="mx-1 brand-name" size="large">Fetch</el-text>
             </router-link>
         </div>
-        <!-- <div class="icon-group">
-            <el-icon class="icon-share"><share /></el-icon>
-            <div class="popup-icon relative">
-                <el-icon class="icon-user" id="icon_user" @click="toggleUserPopup"><user /></el-icon>
-                <div v-if="isUserPopupOpen" class="popup-wrapper absolute"><UserPopup/></div>
-            </div>            
-            <el-icon class="icon-service"><service /></el-icon>
-        </div> -->
         <div>
             <el-menu
                 class="el-menu-popper-demo"
                 mode="horizontal"
                 :popper-offset="2"
                 style="width: 300px"
+                :collapse="true"
             >
-                <el-menu-item index="1">
-                    <el-icon class="icon-service" id="icon_service" ><service /></el-icon>
-                </el-menu-item>
-                <el-menu-item index="2">
-                    <el-icon class="icon-user" id="icon_user" ><user /></el-icon>
+                <el-sub-menu index="1">
+                        <template #title>
+                            <el-icon class="icon-service" id="icon_user" ><service /></el-icon>
+                        </template> 
+                        <el-menu-item index="1-1">
+                            <template #title>Who Am I</template>
+                        </el-menu-item>
+                </el-sub-menu>                
+                <el-sub-menu index="2">
+                    <template #title>
+                        <el-icon class="icon-user" id="icon_user" ><user /></el-icon>
+                    </template> 
                     <el-sub-menu index="2-1">
-                        <el-sub-menu index="2-1-1">
-                            <template #title>Hello Hello</template>
-                        </el-sub-menu>
+                        <template #title>Hello Hello</template>
                     </el-sub-menu>
-                </el-menu-item>
+                </el-sub-menu>
                 
                 <el-menu-item index="3">
                     <el-icon class="icon-share" id="icon_share" ><share /></el-icon>
@@ -58,6 +56,17 @@ const toggleUserPopup = () => {
     width: 100%;
     display: flex;
     position: relative;
+
+    .brand-link {
+        min-width: 100px;
+        a {
+            text-decoration: none;
+            line-height: 52px;
+            .el-text {
+                font-size: 36px;
+            }
+        }
+    }
 
     @media (min-width: 470px) {
         justify-content: space-between;
