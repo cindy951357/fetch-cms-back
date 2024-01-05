@@ -108,7 +108,7 @@ const sidebarRef = ref<any>(null);
     width: 200px;
     height: 100vh;
     background-color: gray;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   .el-menu {

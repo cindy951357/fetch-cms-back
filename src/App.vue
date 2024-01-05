@@ -71,7 +71,7 @@ header {
 
 .maincontent {
   grid-area: maincontent;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .footer {
@@ -202,7 +202,7 @@ header {
   z-index: 3;
 
   & .modal {
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 }
 </style>
