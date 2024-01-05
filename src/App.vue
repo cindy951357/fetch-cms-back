@@ -74,6 +74,7 @@ header {
 .maincontent {
   grid-area: maincontent;
   overflow-y: auto;
+  max-height: calc(100vh - 128px);
 }
 
 .footer {
@@ -103,7 +104,7 @@ header {
   .dashboard-container {
         height: 100vh;
         display: grid;
-        grid-template-rows: 64px 8fr 64px;
+        grid-template-rows: 64px 6fr 64px;
         grid-template-areas:
             "header"
             "maincontent"    
@@ -166,7 +167,7 @@ header {
   .dashboard-container { 
     display: grid;
     grid-template-columns: auto 5fr;
-    grid-template-rows: 64px 8fr 64px;
+    grid-template-rows: 64px 6fr 64px;
     grid-template-areas:
       "sidebar  header"
       "sidebar maincontent"
