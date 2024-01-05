@@ -59,7 +59,7 @@ html, body {
 header {
   grid-area: header;
   display: flex;
-  height: 52px;
+  height: 64px;
   justify-content: space-between;
   background: linear-gradient(90deg, rgba(208,188,179,1) 0%, rgba(212,175,223,1) 50%, rgba(180,228,211,1) 100%);
 }
@@ -103,7 +103,7 @@ header {
   .dashboard-container {
         height: 100vh;
         display: grid;
-        grid-template-rows: 52px 8fr 52px;
+        grid-template-rows: 64px 8fr 64px;
         grid-template-areas:
             "header"
             "maincontent"    
@@ -166,7 +166,7 @@ header {
   .dashboard-container { 
     display: grid;
     grid-template-columns: auto 5fr;
-    grid-template-rows: 52px 8fr 52px;
+    grid-template-rows: 64px 8fr 64px;
     grid-template-areas:
       "sidebar  header"
       "sidebar maincontent"

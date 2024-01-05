@@ -61,7 +61,7 @@ const toggleUserPopup = () => {
         min-width: 100px;
         a {
             text-decoration: none;
-            line-height: 52px;
+            line-height: 64px;
             .el-text {
                 font-size: 36px;
             }
