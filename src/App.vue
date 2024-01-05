@@ -49,9 +49,11 @@ const modalStore = useModalStore();
 </script>
 
 <style lang="scss">
-html, body, .dashboard-container {
+html, body {
     height: 100vh;
     min-width: 300px;
+    padding: 0px;
+    margin: 0px;
 }
 
 header {
@@ -99,6 +101,7 @@ header {
   }
 
   .dashboard-container {
+        height: 100vh;
         display: grid;
         grid-template-rows: 52px 8fr 52px;
         grid-template-areas:
@@ -146,8 +149,7 @@ header {
     border-radius: 10px;
     background: white;
     height: 100%;
-    padding: 10px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 @media (min-width: 470px) {
@@ -167,8 +169,6 @@ header {
     grid-template-rows: 52px 8fr 52px;
     grid-template-areas:
       "sidebar  header"
-      "sidebar maincontent"
-      "sidebar maincontent"
       "sidebar maincontent"
       "sidebar maincontent"
       "sidebar maincontent"

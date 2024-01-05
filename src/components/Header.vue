@@ -31,7 +31,6 @@ const toggleUserPopup = () => {
 <style lang="scss" scoped>
 
 .header {
-    padding: 10px;
     width: 100%;
     display: flex;
     position: relative;
@@ -41,9 +40,11 @@ const toggleUserPopup = () => {
     }    
 }
 .brand-name {
+    padding: 10px;
     color: white;
 }
 .icon-group {
+    padding: 10px;
     color: white;
     display: flex;
     .el-icon:hover {
