@@ -25,7 +25,9 @@
         <template v-for="(item, i) in MainMenuConfig" :key="i">
           <div v-if="item.heading" class="first-item">
             <el-menu-item  :index="`${i}`" @click="handleMenuClick">
-                <template #title>{{ item.heading }}</template>
+                <template #title>
+                  <router-link :to="item.route">{{ item.heading }}</router-link>
+                </template>
             </el-menu-item>            
           </div>
           <el-sub-menu v-if="item.pages" :index="`${i}`">

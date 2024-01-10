@@ -77,6 +77,10 @@ header {
   max-height: calc(100vh - 128px);
 }
 
+.content-page {
+  padding: 10px;
+}
+
 .footer {
     grid-area: footer;
     color: lightgray;
@@ -209,5 +213,8 @@ header {
 
 a {
   text-decoration: none;
+  &:visited {
+    color: white;
+  }
 }
 </style>

@@ -2,6 +2,12 @@ import type { MenuItem } from "../types/menu";
 
 const MainMenuConfig: Array<MenuItem> = [
   {
+    heading: "訂單管理",
+    route: "/order-mgmt",
+    keenthemesIcon: "switch",
+    bootstrapIcon: "bi-layers",
+  },
+  /*{
     pages: [
       {
         heading: "dashboard",
@@ -304,7 +310,7 @@ const MainMenuConfig: Array<MenuItem> = [
         ],
       },
     ],
-  },
+  },*/
 ];
 
 export default MainMenuConfig;
