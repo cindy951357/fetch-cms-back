@@ -26,7 +26,7 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 
 const onEditButtonClick = (orderId) => {
-    router.push(`/${orderId}`);
+    router.push(`order-detail/${orderId}`);
 }
 
 </script>

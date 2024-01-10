@@ -1,5 +1,4 @@
 <template>
-<router-view>
     <div id="not-log-in-yet">
         <header class=".htmlheader">
         <div class="full-width">  
@@ -15,7 +14,6 @@
             </div>
         <div class="footer"><FooterComponent/></div>
     </div>
-</router-view>
 </template>
 
 <script setup lang="ts">

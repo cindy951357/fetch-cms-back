@@ -1,5 +1,4 @@
 <template>
-<router-view>
   <div id="is-logged-in" class="dashboard-container">
     <header class=".htmlheader">
       <div class="full-width hamburger">
@@ -25,7 +24,6 @@
         </div>
     </div>
   </div>
-</router-view>
 </template>
 
 <script lang="ts" setup>
