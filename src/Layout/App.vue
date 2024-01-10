@@ -1,5 +1,6 @@
 <template>
-  <div id="app" class="dashboard-container">
+<router-view>
+  <div id="is-logged-in" class="dashboard-container">
     <header class=".htmlheader">
       <div class="full-width hamburger">
           <div id="icon_hamburger">
@@ -24,6 +25,7 @@
         </div>
     </div>
   </div>
+</router-view>
 </template>
 
 <script lang="ts" setup>
@@ -37,7 +39,7 @@ import Sidebar from "@/components/Sidebar.vue";
 import FooterComponent from "@/components/FooterComponent.vue";
 import { More, Close } from '@element-plus/icons-vue';
 import { ElIcon } from 'element-plus';
-import { useModalStore } from './stores/modal.js';
+import { useModalStore } from '../stores/modal.js';
 
 
 const modalStore = useModalStore();

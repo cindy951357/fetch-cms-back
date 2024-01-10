@@ -1,28 +1,41 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
+import Login from '@/Layout/Login';
 import HomeView from '../views/HomeView.vue'
-// import Contact from '@/ContentPages/Contact';
+import App from '@/Layout/App';
 import OrderMgmt from '@/ContentPages/OrderMgmt';
 import OrderDetail from '@/ContentPages/OrderDetail';
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'login',
+    component: Login
   },{
-    path: '/order-mgmt',
-    name: 'order-mgmt',
-    component: OrderMgmt
-  }, {
-    path: '/order-detail/:orderId',
-    name: 'order-detail',
-    component: OrderDetail
-  }
-]
+    path: '/home',
+    name: 'home',
+    component: App,
+    children: [
+      {
+        path: 'index',
+        name: 'index',
+        component: HomeView,
+      },
+      {
+        path: 'order-mgmt',
+        name: 'order-mgmt',
+        component: OrderMgmt
+      }, {
+        path: 'order-detail/:orderId',
+        name: 'order-detail',
+        component: OrderDetail
+      }
+    ]
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+});
 
-export default router
+export default router;
