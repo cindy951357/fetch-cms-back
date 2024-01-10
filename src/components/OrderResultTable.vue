@@ -26,21 +26,17 @@ import { useCurrentEditOrderStore } from '@/stores/currentEditOrder';
 import { storeToRefs } from 'pinia';
 
 const router = useRouter();
-const currentEditOrderStore= useCurrentEditOrderStore();
+const currentEditOrderStore = useCurrentEditOrderStore();
 
 const onEditButtonClick = (orderId: string) => {
-    useCurrentEditOrderStore.$state =
-        orderData.filter((arrayItem:any) => arrayItem.orderId === orderId);
-
-    const nowOrder = storeToRefs(useCurrentEditOrderStore());
-    console.log("nowOrder", nowOrder);
-
-    // router.push(`order-detail/${orderId}`);
+    if(orderData.filter((arrayItem:any) => arrayItem.orderId === orderId).length){
+        currentEditOrderStore.setWholeState(
+            orderData.filter((arrayItem:any) => arrayItem.orderId === orderId)[0]);
+        router.push(`order-detail/${orderId}`);
+    }   
 }
-
 </script>
   
-
 <style lang="scss" scoped>
 a {
     &:visited {

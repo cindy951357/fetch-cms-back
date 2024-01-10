@@ -19,6 +19,9 @@
                 <el-option :label="orderModel.orderStatus" :value="orderModel.orderStatus" />
             </el-select>
             </el-form-item>
+            <el-form-item label="手機號碼">
+                <el-input v-model="orderModel.phone" :disabled="!isEditable" />
+            </el-form-item>
         </el-form>
 
         
@@ -37,7 +40,8 @@ const route = useRoute();
 const currentEditOrder = useCurrentEditOrderStore();
 
 const orderId = route.params.orderId;
-const initOrder = storeToRefs(currentEditOrder)
+const initOrder = storeToRefs(currentEditOrder);
+const { phone: helloPhone } = storeToRefs(currentEditOrder);
 console.log("current order is: ", initOrder);
 
 const isEditable = ref(true);
@@ -47,7 +51,7 @@ const orderModel = reactive({
     orderId: initOrder.orderId,
     orderStatus: initOrder.orderStatus,
     dealerType: initOrder.dealerType,
-    phone: initOrder.phone,
+    phone: helloPhone,
 });
 
 const dateInDateTime = computed({

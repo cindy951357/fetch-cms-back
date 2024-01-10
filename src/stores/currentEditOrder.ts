@@ -19,5 +19,8 @@ export const useCurrentEditOrderStore = defineStore('CurrentEditOrder', {
     getters: {
     },
     actions: {
+      setWholeState(payload: any) {
+        Object.assign(this, payload);
+      },
     },
 })
