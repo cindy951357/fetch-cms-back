@@ -20,7 +20,7 @@
             </el-form-item>
 
             <el-form-item label="時間">
-            <el-col :span="11">
+            <el-col :span="8">
                 <el-date-picker
                 v-model="form.date1"
                 type="date"
@@ -31,7 +31,7 @@
             <el-col :span="2" class="text-center">
                 <span class="text-gray-500">-</span>
             </el-col>
-            <el-col :span="11">
+            <el-col :span="8">
                 <el-time-picker
                 v-model="form.date2"
                 placeholder="Pick a time"
@@ -39,10 +39,10 @@
                 />
             </el-col>
             </el-form-item>
-            <div class="algin-right relative">
-                <el-button type="primary" @click="onSubmit" class="absolute">搜尋</el-button>
-            </div>
         </el-form>
+        <div class="algin-right">
+            <el-button type="primary" @click="onSubmit" >搜尋</el-button>
+        </div>
         <template v-if="isResultTableRefresh">
             <OrderResultTable/>
         </template>        
@@ -81,15 +81,20 @@ const form = reactive({
 </script>
 
 <style lang="scss" scoped>
-.relative {
-    position: relative;
-}
-.absolute {
-    position: absolute;
-    right: 10px;
+.order-mgmt {
+    .el-form {
+        height: fit-content;
+    }
 }
 .align-right {
-    height: fit-content;
+    height: 40px;
     width: 100%;
+    display: flex;
+    justify-content: right;
+    text-align: right;
+    position: relative;
+    .el-button, button {
+        margin: auto 0;;
+    }
 }
 </style>
