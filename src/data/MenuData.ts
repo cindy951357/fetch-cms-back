@@ -3,7 +3,7 @@ import type { MenuItem } from "../types/menu";
 const MainMenuConfig: Array<MenuItem> = [
   {
     heading: "訂單管理",
-    route: "/order-mgmt",
+    route: "/home/order-mgmt",
     keenthemesIcon: "switch",
     bootstrapIcon: "bi-layers",
   },

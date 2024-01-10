@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Login from '@/Layout/Login';
 import HomeView from '../views/HomeView.vue'
+import IsLoggedIn from '@/Layout/IsLoggedIn';
 import App from '@/Layout/App';
 import OrderMgmt from '@/ContentPages/OrderMgmt';
 import OrderDetail from '@/ContentPages/OrderDetail';
@@ -13,7 +14,7 @@ const routes = [
   },{
     path: '/home',
     name: 'home',
-    component: App,
+    component: IsLoggedIn,
     children: [
       {
         path: 'index',

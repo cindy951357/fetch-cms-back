@@ -55,7 +55,7 @@ import { ElForm, ElFormItem,
         ElInput, ElButton,
      ElCol, ElTimePicker, ElText, 
 } from 'element-plus';
-import OrderResultTable from '../components/OrderResultTable.vue';
+import OrderResultTable from '@/components/OrderResultTable.vue';
 
 const isResultTableRefresh = ref(false);
 

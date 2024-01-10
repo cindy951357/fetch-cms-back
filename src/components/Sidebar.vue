@@ -20,7 +20,7 @@
     >
         <el-menu-item index="0" @click="handleMenuClick">
             <el-icon><house /></el-icon>
-            <template #title><router-link to="/">Home</router-link></template>
+            <template #title><router-link to="/">首頁</router-link></template>
         </el-menu-item>
         <template v-for="(item, i) in MainMenuConfig" :key="i">
           <div v-if="item.heading" class="first-item">
@@ -34,7 +34,9 @@
             <template #title>{{ item.heading }}</template>
             <template v-for="(secondItem, j) in item.pages" :key="j">
               <template v-if="secondItem.heading">
-                <el-menu-item :index="`${i}-${j}`" @click="handleMenuClick"><NuxtLink to="/products">{{ secondItem.heading }}</NuxtLink></el-menu-item>
+                <el-menu-item :index="`${i}-${j}`" @click="handleMenuClick">
+                  <router-link to="/products">{{ secondItem.heading }}</router-link>
+                </el-menu-item>
               </template>
               <template v-if="secondItem.sectionTitle && secondItem.route">
                 <span class="second-item-section-title">{{ secondItem.sectionTitle }}</span>

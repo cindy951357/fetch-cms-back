@@ -8,10 +8,10 @@
             <el-table-column prop="phone" label="手機號碼" width="120" />
             <el-table-column fixed="right" label="Operations" width="120">
             <template #default="scope">
-                <el-button link type="primary" size="small">
-                    <router-link :to='{ name: "order-detail", params: { orderId: scope.row.orderNo }}'>
-                        編輯
-                    </router-link>
+                <el-button link type="primary" size="small"
+                    @click="() => onEditButtonClick(scope.row.orderNo)"
+                >
+                     編輯
                 </el-button>
             </template>
             </el-table-column>
@@ -19,10 +19,17 @@
 </div>
 </template>
   
-  <script lang="ts" setup>
+<script lang="ts" setup>
 import { orderData } from '@/data/OrderData';
+import { useRouter } from 'vue-router';
 
-  </script>
+const router = useRouter();
+
+const onEditButtonClick = (orderId) => {
+    router.push(`/${orderId}`);
+}
+
+</script>
   
 
 <style lang="scss" scoped>
