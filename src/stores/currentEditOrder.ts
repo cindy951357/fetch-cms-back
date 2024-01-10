@@ -17,14 +17,7 @@ export const useCurrentEditOrderStore = defineStore('CurrentEditOrder', {
         phone: '',
     }),
     getters: {
-      //
     },
     actions: {
-      updateOrder(newValue:ICurrentEditOrder) {
-        this.$state = newValue;
-      },
-      setCurrentOrder(current:ICurrentEditOrder) {
-        this.$state = current;
-      }
     },
 })

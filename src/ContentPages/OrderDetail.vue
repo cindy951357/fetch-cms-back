@@ -16,8 +16,7 @@
 
             <el-form-item label="訂單狀態">
             <el-select v-model="orderModel.orderStatus" placeholder="訂單狀態" :disabled="!isEditable">
-                <el-option label="Zone one" value="shanghai" />
-                <el-option label="Zone two" value="beijing" />
+                <el-option :label="orderModel.orderStatus" :value="orderModel.orderStatus" />
             </el-select>
             </el-form-item>
         </el-form>
@@ -28,18 +27,18 @@
 
 <script lang="ts" setup>
 import { reactive, computed, ref } from 'vue';
-import { useRouter, useRoute } from 'vue-router';
-import {useCurrentEditOrderStore} from '@/stores/currentEditOrder';
-import type { ICurrentEditOrder } from '../stores/currentEditOrder';
+import { useRoute } from 'vue-router';
+import { useCurrentEditOrderStore } from '@/stores/currentEditOrder';
+import { storeToRefs } from 'pinia';
 
 import { ElDatePicker } from 'element-plus';
 
-const router = useRouter();
 const route = useRoute();
-const currentEditOrder:ICurrentEditOrder = useCurrentEditOrderStore();
+const currentEditOrder = useCurrentEditOrderStore();
 
 const orderId = route.params.orderId;
-const initOrder = currentEditOrder;
+const initOrder = storeToRefs(currentEditOrder)
+console.log("current order is: ", initOrder);
 
 const isEditable = ref(true);
 
@@ -54,7 +53,6 @@ const orderModel = reactive({
 const dateInDateTime = computed({
   get: () =>  new Date(orderModel.date),
   set: (val) => {
-    //
   },
 });
 

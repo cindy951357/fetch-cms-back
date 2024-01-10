@@ -22,17 +22,20 @@
 <script lang="ts" setup>
 import { orderData } from '@/data/OrderData';
 import { useRouter } from 'vue-router';
-import {useCurrentEditOrderStore } from '@/stores/currentEditOrder';
+import { useCurrentEditOrderStore } from '@/stores/currentEditOrder';
+import { storeToRefs } from 'pinia';
+
 const router = useRouter();
 const currentEditOrderStore= useCurrentEditOrderStore();
 
 const onEditButtonClick = (orderId: string) => {
-    console.log("0000")
-    currentEditOrderStore.setCurrentOrder(
-        orderData.filter((item:any) => item.orderId === orderId)
-    );
-    console.log("abcde")
-    router.push(`order-detail/${orderId}`);
+    useCurrentEditOrderStore.$state =
+        orderData.filter((arrayItem:any) => arrayItem.orderId === orderId);
+
+    const nowOrder = storeToRefs(useCurrentEditOrderStore());
+    console.log("nowOrder", nowOrder);
+
+    // router.push(`order-detail/${orderId}`);
 }
 
 </script>
