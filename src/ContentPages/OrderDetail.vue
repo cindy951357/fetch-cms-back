@@ -1,11 +1,12 @@
 <template>
     <div class="order-detail content-page">
-        訂單詳情 {{ orderId }}
-        <el-form :model="orderModel" label-width="400px">
+        <h3>訂單詳情</h3>
+        <el-form :model="orderModel" label-width="100px">
             <el-form-item label="訂單編號">
                 <el-input v-model="orderModel.orderId" disabled />
             </el-form-item>
 
+            <el-form-item label="訂單狀態">
             <span class="order-datetime">訂單時間</span>
             <el-date-picker
                 v-model="orderModel.date"
@@ -13,6 +14,7 @@
                 placeholder="Select date and time"
                 :disabled="!isEditable"
             />
+            </el-form-item>
 
             <el-form-item label="訂單狀態">
             <el-select v-model="orderModel.orderStatus" placeholder="訂單狀態" :disabled="!isEditable">
@@ -21,6 +23,10 @@
             </el-form-item>
             <el-form-item label="手機號碼">
                 <el-input v-model="orderModel.phone" :disabled="!isEditable" />
+            </el-form-item>
+            <el-form-item>
+                <el-button @click="onEditButtonClick" :disabled="isEditable">編輯</el-button>
+                <el-button @click="onSaveButtonClick">儲存</el-button>
             </el-form-item>
         </el-form>
 
@@ -39,9 +45,7 @@ import { ElDatePicker } from 'element-plus';
 const route = useRoute();
 const currentEditOrder = useCurrentEditOrderStore();
 
-const orderId = route.params.orderId;
 const initOrder = storeToRefs(currentEditOrder);
-const { phone: helloPhone } = storeToRefs(currentEditOrder);
 console.log("current order is: ", initOrder);
 
 const isEditable = ref(true);
@@ -51,7 +55,7 @@ const orderModel = reactive({
     orderId: initOrder.orderId,
     orderStatus: initOrder.orderStatus,
     dealerType: initOrder.dealerType,
-    phone: helloPhone,
+    phone: initOrder.phone,
 });
 
 const dateInDateTime = computed({
@@ -59,6 +63,14 @@ const dateInDateTime = computed({
   set: (val) => {
   },
 });
+
+const onEditButtonClick = () => {
+    isEditable.value = true;
+}
+
+const onSaveButtonClick = () => {
+    isEditable.value = false;
+}
 
 </script>
 

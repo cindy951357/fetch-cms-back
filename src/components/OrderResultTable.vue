@@ -23,7 +23,6 @@
 import { orderData } from '@/data/OrderData';
 import { useRouter } from 'vue-router';
 import { useCurrentEditOrderStore } from '@/stores/currentEditOrder';
-import { storeToRefs } from 'pinia';
 
 const router = useRouter();
 const currentEditOrderStore = useCurrentEditOrderStore();
