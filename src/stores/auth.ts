@@ -8,6 +8,9 @@ export const useAuthStore = defineStore('Auth', {
     actions: {
         logIn(){
             this.isLoggedIn = true;
+        },
+        logOut(){
+            this.isLoggedIn = false;
         }
     },
 });

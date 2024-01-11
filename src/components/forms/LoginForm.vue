@@ -52,7 +52,6 @@
 
 
   const onSubmit = () => {
-
     if (verifyFields()) {
       authStore.logIn();
       router.push('/home/index');

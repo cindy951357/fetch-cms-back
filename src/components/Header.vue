@@ -25,9 +25,11 @@
                     <template #title>
                         <el-icon class="icon-user" id="icon_user" ><user /></el-icon>
                     </template> 
-                    <el-sub-menu index="2-1">
-                        <template #title>Hello Hello</template>
-                    </el-sub-menu>
+                    <el-menu-item v-if="authStore.isLoggedIn" index="2-1">
+                        <template #title>
+                            <span @click="onLogOutClick">登出</span>
+                        </template>
+                    </el-menu-item>
                 </el-sub-menu>
                 
                 <el-menu-item index="3">
@@ -39,15 +41,19 @@
 </template>
 
 <script lang="ts" setup>
-import UserPopup from "@/components/popups/UserPopup";
 import { Share, User, Service } from '@element-plus/icons-vue';
 import { ElIcon, ElMenu, ElMenuItem, ElSubMenu } from 'element-plus';
-import { ref } from 'vue';
+import { useAuthStore } from "@/stores/auth";
+import { useRouter } from 'vue-router';
 
-const isUserPopupOpen = ref(false);
-const toggleUserPopup = () => {
-    isUserPopupOpen.value = !isUserPopupOpen.value;
+const authStore = useAuthStore();
+const router = useRouter();
+
+const onLogOutClick = () => {
+    authStore.logOut();
+    router.push('/');
 }
+
 </script>
 
 <style lang="scss" scoped>

@@ -20,6 +20,16 @@
 import HeaderComponent from '@/components/Header.vue';
 import FooterComponent from "@/components/FooterComponent.vue";
 import LoginForm from '@/components/forms/LoginForm';
+import { useAuthStore } from '@/stores/auth';
+import { useRouter } from 'vue-router';
+// import { storeToRefs } from 'pinia';
+
+const authStore = useAuthStore();
+const router = useRouter();
+
+if (authStore.isLoggedIn) {
+    router.push('/home/index');
+}
 
 </script>
 
