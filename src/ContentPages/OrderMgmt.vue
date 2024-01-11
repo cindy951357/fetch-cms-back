@@ -1,6 +1,6 @@
 <template>
     <div class="order-mgmt content-page">
-        <el-text>訂單管理 - 篩選條件</el-text>
+        <h3>訂單管理 - 篩選條件</h3>
         <el-form :model="form" label-width="120px">
             <!-- <el-form-item label="Activity name">
             <el-input v-model="form.name" />
@@ -43,9 +43,12 @@
         <div class="algin-right">
             <el-button type="primary" @click="onSubmit" >搜尋</el-button>
         </div>
+
+        <hr>
+        
         <template v-if="isResultTableRefresh">
             <OrderResultTable/>
-        </template>        
+        </template>                
     </div>
 </template>
 

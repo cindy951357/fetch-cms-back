@@ -7,7 +7,6 @@
             </el-form-item>
 
             <el-form-item label="訂單狀態">
-            <span class="order-datetime">訂單時間</span>
             <el-date-picker
                 v-model="orderModel.date"
                 type="datetime"

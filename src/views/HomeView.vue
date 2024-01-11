@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home content-page">
     <h1>歡迎來到訂單管理後台</h1>
     
   </div>

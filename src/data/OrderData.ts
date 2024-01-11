@@ -2,7 +2,7 @@ export const orderData = [
     {
       date: '2024-08-03',
       orderId: '111111',
-      orderStatus: 'California',
+      orderStatus: '1',
       dealerType: 'Los Angeles',
       phone: '0912345678',
       zip: 'CA 90036',
@@ -11,7 +11,7 @@ export const orderData = [
     {
       date: '2024-02-02',
       orderId: '222222',
-      orderStatus: 'California',
+      orderStatus: '2',
       dealerType: 'Los Angeles',
       phone: '0987654321',
       zip: 'CA 90036',
@@ -20,7 +20,7 @@ export const orderData = [
     {
       date: '2024-05-01',
       orderId: '333333',
-      orderStatus: 'California',
+      orderStatus: '2',
       dealerType: 'Los Angeles',
       phone: '0911222333',
       zip: 'CA 90036',
@@ -29,7 +29,7 @@ export const orderData = [
     {
       date: '2024-01-01',
       orderId: '44444',
-      orderStatus: 'California',
+      orderStatus: '1',
       dealerType: 'Los Angeles',
       time: 'No. 189, Grove St, Los Angeles',
       phone: '09887777666',

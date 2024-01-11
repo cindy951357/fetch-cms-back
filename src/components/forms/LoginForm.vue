@@ -62,7 +62,4 @@
   </script>
 
  <style lang="scss" scoped>
-.el-form-item__content {
-  justify-content: center;
-}
 </style>

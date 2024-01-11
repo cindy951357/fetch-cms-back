@@ -21,7 +21,7 @@
                             <template #title>Who Am I</template>
                         </el-menu-item>
                 </el-sub-menu>                
-                <el-sub-menu index="2">
+                <el-sub-menu v-if="authStore.isLoggedIn" index="2">
                     <template #title>
                         <el-icon class="icon-user" id="icon_user" ><user /></el-icon>
                     </template> 

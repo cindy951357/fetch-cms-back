@@ -1,10 +1,10 @@
 <template>
     <div class="order-result-table">
         <el-table :data="orderData" style="width: 100%">
-            <el-table-column fixed prop="date" label="Date" width="150" />
+            <el-table-column fixed prop="date" label="訂單時間" width="150" />
             <el-table-column prop="orderId" label="訂單編號" width="120" />
             <el-table-column prop="orderStatus" label="訂單狀態" width="120" />
-            <el-table-column prop="dealerType" label="經銷商狀態" width="120" />
+            <el-table-column prop="dealerType" label="經銷商總類" width="120" />
             <el-table-column prop="phone" label="手機號碼" width="120" />
             <el-table-column fixed="right" label="Operations" width="120">
             <template #default="scope">
