@@ -45,15 +45,25 @@ import { ElIcon } from 'element-plus';
 import { useModalStore } from '@/stores/modal';
 import SaveConfirm from "@/components/popups/SaveConfirm.vue";
 import { storeToRefs } from 'pinia';
+import { useAuthStore } from '@/stores/auth';
+import { useRouter } from 'vue-router';
 
+const authStore = useAuthStore();
 const modalStore = useModalStore();
+const router = useRouter();
+
 const { isOpen: isModalOpen,
         current: currentModal
 } = storeToRefs(modalStore);
 
-  const openModal = () => {
-      modalStore.openModal();
-  }
+const { isLoggedIn } = storeToRefs(authStore);
+if(!isLoggedIn) {
+  router.push('/');
+}
+
+const openModal = () => {
+    modalStore.openModal();
+}
 
 </script>
 

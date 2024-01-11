@@ -81,6 +81,7 @@ const popupConfimDialog = () => {
         currentEditOrder.saveToDB(orderModel);
         isEditable.value = false;       
     } else {
+        isEditable.value = true;
     }
 }
 
