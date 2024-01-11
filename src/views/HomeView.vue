@@ -17,3 +17,14 @@ export default {
   },
 }
 </script>
+
+<style>
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+</style>

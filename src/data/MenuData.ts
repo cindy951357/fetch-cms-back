@@ -7,6 +7,41 @@ const MainMenuConfig: Array<MenuItem> = [
     keenthemesIcon: "switch",
     bootstrapIcon: "bi-layers",
   },
+  {
+    heading: "二",
+    route: "/",
+    pages: [
+      {
+        sectionTitle: "二之一",
+        route: "/",
+        keenthemesIcon: "abstract-38",
+        bootstrapIcon: "bi-printer",
+        sub: [
+          {
+            heading: "二之一之一",
+            route: "/",
+          },
+          {
+            heading: "二之一之二",
+            route: "/",
+          },
+        ],
+      },
+      {
+        sectionTitle: "二之二",
+        route: "/",
+        keenthemesIcon: "basket",
+        bootstrapIcon: "bi-cart",
+        sub: [
+          {
+            heading: "二之二之一",
+            route: "/",
+          },
+
+        ],
+      },
+    ],
+  },
   /*{
     pages: [
       {

@@ -35,7 +35,7 @@
             <template v-for="(secondItem, j) in item.pages" :key="j">
               <template v-if="secondItem.heading">
                 <el-menu-item :index="`${i}-${j}`" @click="handleMenuClick">
-                  <router-link to="/products">{{ secondItem.heading }}</router-link>
+                  <router-link :to="item.route">{{ secondItem.heading }}</router-link>
                 </el-menu-item>
               </template>
               <template v-if="secondItem.sectionTitle && secondItem.route">
@@ -48,7 +48,7 @@
                    <el-menu-item-group>
                     <template v-if="thirdItem.heading">
                       <el-menu-item :index="`${i}-${j}-${k}`">
-                        <router-link to="/contact" @click="handleMenuClick">{{ thirdItem.heading }}</router-link>
+                        <router-link :to="item.route" @click="handleMenuClick">{{ thirdItem.heading }}</router-link>
                       </el-menu-item>
                     </template>
                   </el-menu-item-group>
@@ -107,7 +107,7 @@ const sidebarRef = ref<any>(null);
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 200px;
     height: 100vh;
@@ -124,7 +124,10 @@ const sidebarRef = ref<any>(null);
         color: white;
 
         &:hover {
-            color: black;
+            color: lightslategray;
+        }
+        &:visited {
+          color: white;
         }
     }    
   }
