@@ -17,10 +17,15 @@
             </div>
         </div>
     <div class="footer"><FooterComponent/></div>
-    <div class="modal-overlay" v-show="modalStore.isOpen">
+    <div class="modal-overlay" v-if="isModalOpen">
         <div class="modal">
-          <el-icon class="icon-close" @click="modalStore.close()"><close /></el-icon>
-            <Sidebar/>
+          <el-icon class="icon-close" 
+            @click="modalStore.close()" v-if="currentModal === 'sidebar'"
+          >
+            <close />
+          </el-icon>
+          <Sidebar v-if="currentModal === 'sidebar'"/>
+          <SaveConfirm v-if="currentModal === 'save-confirm'"/>
         </div>
     </div>
   </div>
@@ -37,10 +42,14 @@ import Sidebar from "@/components/Sidebar.vue";
 import FooterComponent from "@/components/FooterComponent.vue";
 import { More, Close } from '@element-plus/icons-vue';
 import { ElIcon } from 'element-plus';
-import { useModalStore } from '../stores/modal.js';
-
+import { useModalStore } from '@/stores/modal';
+import SaveConfirm from "@/components/popups/SaveConfirm.vue";
+import { storeToRefs } from 'pinia';
 
 const modalStore = useModalStore();
+const { isOpen: isModalOpen,
+        current: currentModal
+} = storeToRefs(modalStore);
 
   const openModal = () => {
       modalStore.openModal();
@@ -186,15 +195,6 @@ header {
     height: 20px;
 }
 
-.icon-close {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    right: 10px;
-    top: 10px;
-    color: white;
-}
-
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -208,6 +208,21 @@ header {
 
   & .modal {
     overflow-y: auto;
+
+    .el-icon {
+      position: absolute;
+    }
+    .icon-close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: white;
+
+        svg {
+          width: 80px !important;
+          height: 80px !important;
+        }
+    }
   }
 }
 

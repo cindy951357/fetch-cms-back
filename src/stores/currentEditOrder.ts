@@ -22,5 +22,8 @@ export const useCurrentEditOrderStore = defineStore('CurrentEditOrder', {
       setWholeState(payload: any) {
         Object.assign(this, payload);
       },
+      saveToDB(payload: ICurrentEditOrder){
+        //call backend API
+      }
     },
 })

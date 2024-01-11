@@ -38,11 +38,12 @@ import { reactive, computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { useCurrentEditOrderStore } from '@/stores/currentEditOrder';
 import { storeToRefs } from 'pinia';
-
 import { ElDatePicker } from 'element-plus';
+import { useModalStore } from '@/stores/modal';
 
 const route = useRoute();
 const currentEditOrder = useCurrentEditOrderStore();
+const modalStore = useModalStore()
 
 const initOrder = storeToRefs(currentEditOrder);
 console.log("current order is: ", initOrder);
@@ -67,8 +68,20 @@ const onEditButtonClick = () => {
     isEditable.value = true;
 }
 
-const onSaveButtonClick = () => {
-    isEditable.value = false;
+const { confirmStr } = storeToRefs(modalStore);
+
+const onSaveButtonClick = async() => {
+    await popupConfimDialog();
+}
+
+const popupConfimDialog = () => {
+        modalStore.openModal('save-confirm');
+
+    if (confirmStr === 'confirm') {
+        currentEditOrder.saveToDB(orderModel);
+        isEditable.value = false;       
+    } else {
+    }
 }
 
 </script>
